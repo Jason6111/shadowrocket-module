@@ -1,6 +1,6 @@
 # 模块添加
 ```
-[te-interval=172800, opt-parser=false, enabled=true](https://raw.githubusercontent.com/Jason6111/shadowrocket-module/main/TikTok/TiKTok-JP.module)https://raw.githubusercontent.com/Jason6111/shadowrocket-module/main/TikTok/TiKTok-JP.module
+https://raw.githubusercontent.com/Jason6111/shadowrocket-module/main/TikTok/TiKTok-JP.module
 ```
 # 配置文件添加  
 ```
