@@ -5,15 +5,9 @@
 ```
 https://raw.githubusercontent.com/Jason6111/shadowrocket-module/main/QuantumultX/TikTok/TikTok.conf, tag=TikTok, update-interval=86400, opt-parser=false, enabled=true
 ```
-**方法二：**
 
 在`[rewrite_local]`中添加以下重写把307后的CN改成想要的国家
 
 ```
 (?<=_region=)CN(?=&) url 307 CN
-```
-在`[mitm]`中添加
-
-```
-hostname = *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
 ```
