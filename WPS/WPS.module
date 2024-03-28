@@ -1,0 +1,11 @@
+#!name=WPS
+
+#!desc=WPS
+
+[Script]
+
+WPS会员 = type=http-response,pattern=^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$,script-path=https://raw.githubusercontent.com/Jason6111/shadowrocket-module/main/WPS/wps.js,requires-body=1,timeout=10
+
+[MITM]
+
+hostname = %APPEND% account.wps.cn,*account.wps.com
