@@ -1,0 +1,52 @@
+name: Update
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 */3 * * *
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+
+    - name: Update
+      run: |
+        # QX
+        # youtube
+        rm -f ./QuantumultX/AD/youtube.request.beta.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js -O ./QuantumultX/AD/youtube.request.preview.js
+        rm -f ./QuantumultX/AD/youtube.response.beta.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js -O ./QuantumultX/AD/youtube.response.preview.js
+        # spotifyVIP
+        rm -f ./QuantumultX/spotifyVIP/spotify-json.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js -O ./QuantumultX/spotifyVIP/spotify-json.js
+        rm -f ./QuantumultX/spotifyVIP/spotify-proto.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js -O ./QuantumultX/spotifyVIP/spotify-proto.js
+
+        # shadowrocket
+        # youtube
+        rm -f ./AD/youtube.request.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js -O ./AD/youtube.request.preview.js
+        rm -f ./AD/youtube.response.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js -O ./AD/youtube.response.preview.js
+        # spotifyVIP
+        rm -f ./spotifyVIP/spotify-json.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js -O ./spotifyVIP/spotify-json.js
+        rm -f ./spotifyVIP/spotify-proto.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js -O ./spotifyVIP/spotify-proto.js
+
+    - name: Clean
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git checkout --orphan latest_branch
+        git add -A
+        git commit -am "${{ steps.date.outputs.date }}"
+        git branch -D main
+        git branch -m main
+
+    - name: Push
+      run: git push -f origin main
