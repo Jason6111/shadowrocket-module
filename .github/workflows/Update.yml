@@ -25,7 +25,6 @@ jobs:
         # QX
         # youtube
         rm -f ./QuantumultX/AD/youtube.request.beta.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js -O ./QuantumultX/AD/youtube.request.preview.js
-        rm -f ./QuantumultX/AD/youtube.response.beta.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js -O ./QuantumultX/AD/youtube.response.preview.js
         # spotifyVIP
         rm -f ./QuantumultX/spotifyVIP/spotify-json.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js -O ./QuantumultX/spotifyVIP/spotify-json.js
         rm -f ./QuantumultX/spotifyVIP/spotify-proto.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js -O ./QuantumultX/spotifyVIP/spotify-proto.js
