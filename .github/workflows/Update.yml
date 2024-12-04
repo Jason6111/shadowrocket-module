@@ -32,7 +32,7 @@ jobs:
         # shadowrocket
         # youtube
         rm -f ./AD/youtube.request.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js -O ./AD/youtube.request.preview.js
-        rm -f ./AD/youtube.response.js && wget https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js -O ./AD/youtube.response.preview.js
+
         # spotifyVIP
         rm -f ./spotifyVIP/spotify-json.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js -O ./spotifyVIP/spotify-json.js
         rm -f ./spotifyVIP/spotify-proto.js && wget https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js -O ./spotifyVIP/spotify-proto.js
